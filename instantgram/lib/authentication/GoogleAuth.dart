@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:instantgram/Screens/homeScreen.dart';
+import '../pages/main/main_view.dart';
 
 final FirebaseAuth auth = FirebaseAuth.instance;
 
@@ -33,7 +33,7 @@ class _GoogleAuthState extends State<GoogleAuth> {
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => HomeScreen(),
+            builder: (context) => MainView(),
           ),
         );
       } // if result not null we simply call the MaterialpageRoute,
