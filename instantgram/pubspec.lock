@@ -126,32 +126,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-<<<<<<< HEAD
-  flutter_hooks:
-    dependency: transitive
-    description:
-      name: flutter_hooks
-      sha256: "6a126f703b89499818d73305e4ce1e3de33b4ae1c5512e3b8eab4b986f46774c"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.18.6"
-  flutter_lints:
-    dependency: "direct dev"
-=======
   flutter_facebook_auth:
     dependency: "direct main"
->>>>>>> 2eb6e50bc7022c35bf6000c66e0c8603b7cf5b66
     description:
       name: flutter_facebook_auth
       sha256: "804de2aa5b5dec4f68d1c15c74467700fa80b7a2d25235e1398f4637f80cfcf7"
       url: "https://pub.dev"
     source: hosted
-<<<<<<< HEAD
-    version: "2.0.2"
-  flutter_riverpod:
-    dependency: transitive
-    description:
-=======
     version: "6.0.0"
   flutter_facebook_auth_platform_interface:
     dependency: transitive
@@ -169,17 +150,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.0.0"
+  flutter_hooks:
+    dependency: transitive
+    description:
+      name: flutter_hooks
+      sha256: "6a126f703b89499818d73305e4ce1e3de33b4ae1c5512e3b8eab4b986f46774c"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.18.6"
   flutter_riverpod:
     dependency: "direct main"
     description:
->>>>>>> 2eb6e50bc7022c35bf6000c66e0c8603b7cf5b66
       name: flutter_riverpod
       sha256: b83ac5827baadefd331ea1d85110f34645827ea234ccabf53a655f41901a9bf4
       url: "https://pub.dev"
     source: hosted
     version: "2.3.6"
-<<<<<<< HEAD
-=======
   flutter_secure_storage:
     dependency: transitive
     description:
@@ -228,7 +214,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.0"
->>>>>>> 2eb6e50bc7022c35bf6000c66e0c8603b7cf5b66
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -247,16 +232,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "10.5.0"
-<<<<<<< HEAD
-  hooks_riverpod:
-    dependency: "direct main"
-    description:
-      name: hooks_riverpod
-      sha256: be68cf7653fcab798500f9047ac58c3f109287a1595012412f4a0d654a9bb9c5
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.3.6"
-=======
   google_identity_services_web:
     dependency: transitive
     description:
@@ -305,6 +280,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.12.0+2"
+  hooks_riverpod:
+    dependency: "direct main"
+    description:
+      name: hooks_riverpod
+      sha256: be68cf7653fcab798500f9047ac58c3f109287a1595012412f4a0d654a9bb9c5
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.3.6"
   http:
     dependency: transitive
     description:
@@ -321,7 +304,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.2"
->>>>>>> 2eb6e50bc7022c35bf6000c66e0c8603b7cf5b66
   js:
     dependency: transitive
     description:
@@ -370,8 +352,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.4"
-<<<<<<< HEAD
-=======
   quiver:
     dependency: transitive
     description:
@@ -380,7 +360,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.2.1"
->>>>>>> 2eb6e50bc7022c35bf6000c66e0c8603b7cf5b66
   riverpod:
     dependency: transitive
     description:

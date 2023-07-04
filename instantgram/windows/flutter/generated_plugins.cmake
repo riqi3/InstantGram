@@ -4,10 +4,7 @@
 
 list(APPEND FLUTTER_PLUGIN_LIST
   firebase_core
-<<<<<<< HEAD
-=======
   flutter_secure_storage_windows
->>>>>>> 2eb6e50bc7022c35bf6000c66e0c8603b7cf5b66
 )
 
 list(APPEND FLUTTER_FFI_PLUGIN_LIST
