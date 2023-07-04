@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instantgram/authentication/GitHubAuth.dart';
 
 import 'GoogleAuth.dart';
 
@@ -14,7 +15,12 @@ class LoginScreen extends StatelessWidget {
             width: 500,
             height: 500,
             child: GoogleAuth(),
-            ),
+          ),
+          Container(
+            width: 500,
+            height: 500,
+            child: GitHubAuth(),
+          ),
         ],
       ),
     );

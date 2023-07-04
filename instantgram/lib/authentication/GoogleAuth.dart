@@ -14,34 +14,32 @@ class GoogleAuth extends StatefulWidget {
 }
 
 class _GoogleAuthState extends State<GoogleAuth> {
+  Future<void> signin(BuildContext context) async {
+    final GoogleSignIn googleSignIn = GoogleSignIn();
+    final GoogleSignInAccount? googleSignInAccount =
+        await googleSignIn.signIn();
+    if (googleSignInAccount != null) {
+      final GoogleSignInAuthentication googleSignInAuthentication =
+          await googleSignInAccount.authentication;
+      final AuthCredential authCredential = GoogleAuthProvider.credential(
+          idToken: googleSignInAuthentication.idToken,
+          accessToken: googleSignInAuthentication.accessToken);
 
+      // Getting users credential
+      UserCredential result = await auth.signInWithCredential(authCredential);
+      User? user = result.user;
 
-Future<void> signup(BuildContext context) async {
-  final GoogleSignIn googleSignIn = GoogleSignIn();
-  final GoogleSignInAccount? googleSignInAccount = await googleSignIn.signIn();
-  if (googleSignInAccount != null) {
-    final GoogleSignInAuthentication googleSignInAuthentication =
-        await googleSignInAccount.authentication;
-    final AuthCredential authCredential = GoogleAuthProvider.credential(
-        idToken: googleSignInAuthentication.idToken,
-        accessToken: googleSignInAuthentication.accessToken);
-
-    // Getting users credential
-    UserCredential result = await auth.signInWithCredential(authCredential);
-    User? user = result.user;
-
-    if (user != null) {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => HomeScreen(),
-        ),
-      );
-    } // if result not null we simply call the MaterialpageRoute,
-    // for go to the HomePage screen
+      if (user != null) {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => HomeScreen(),
+          ),
+        );
+      } // if result not null we simply call the MaterialpageRoute,
+      // for go to the HomePage screen
+    }
   }
-}
-
 
   @override
   Widget build(BuildContext context) {
@@ -61,37 +59,36 @@ Future<void> signup(BuildContext context) async {
           child: Column(
             children: [
               MaterialButton(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Container(
-                      height: 30.0,
-                      width: 30.0,
-                      child: FaIcon(FontAwesomeIcons.google, color: Colors.red,),
-                      // decoration: BoxDecoration(
-                      //   // image: DecorationImage(
-                      //   //     image: AssetImage('assets/images/googleimage.png'),
-                      //   //     fit: BoxFit.cover),
-                      //   shape: BoxShape.circle,
-                      // ),
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Text("Sign In with Google")
-                  ],
-                ),
-                onPressed: () {
-                 signup(context); 
-                }
-              ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Container(
+                        height: 30.0,
+                        width: 30.0,
+                        child: FaIcon(
+                          FontAwesomeIcons.google,
+                          color: Colors.red,
+                        ),
+                        // decoration: BoxDecoration(
+                        //   // image: DecorationImage(
+                        //   //     image: AssetImage('assets/images/googleimage.png'),
+                        //   //     fit: BoxFit.cover),
+                        //   shape: BoxShape.circle,
+                        // ),
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      Text("Sign In with Google")
+                    ],
+                  ),
+                  onPressed: () {
+                    signin(context);
+                  }),
             ],
           ),
         ),
       ),
     );
-    
   }
-  
 }
-
