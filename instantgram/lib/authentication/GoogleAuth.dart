@@ -6,8 +6,6 @@ import 'package:instantgram/Screens/homeScreen.dart';
 
 final FirebaseAuth auth = FirebaseAuth.instance;
 
-
-
 class GoogleAuth extends StatefulWidget {
   const GoogleAuth({super.key});
 
@@ -80,7 +78,7 @@ Future<void> signup(BuildContext context) async {
                     SizedBox(
                       width: 20,
                     ),
-                    Text("Signss In with Google")
+                    Text("Sign In with Google")
                   ],
                 ),
                 onPressed: () {
