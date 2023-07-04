@@ -36,8 +36,16 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   firebase_core: ^2.14.0
+<<<<<<< HEAD
   font_awesome_flutter: ^10.5.0
   hooks_riverpod: ^2.3.6
+=======
+  google_sign_in: ^6.1.4
+  flutter_facebook_auth: ^6.0.0
+  firebase_auth: ^4.6.3
+  font_awesome_flutter: ^10.5.0
+  flutter_riverpod: ^2.3.6
+>>>>>>> 2eb6e50bc7022c35bf6000c66e0c8603b7cf5b66
 
 dev_dependencies:
   flutter_test:
@@ -48,7 +56,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^2.0.0
+  # flutter_lints: ^2.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
