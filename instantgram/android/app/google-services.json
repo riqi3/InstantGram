@@ -14,7 +14,15 @@
       },
       "oauth_client": [
         {
-          "client_id": "796969362138-s3udphug7l6phalapclsgkmhra3vpufa.apps.googleusercontent.com",
+          "client_id": "796969362138-kpjt7qs9p69nas2itl43emkn0gjrja0n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.instantgram",
+            "certificate_hash": "2f37eaecfd292e1e5c68171a0886d70fa9fd042c"
+          }
+        },
+        {
+          "client_id": "796969362138-hjhp5lg45t5lo2dtcsmf7u9t2rttr289.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -27,7 +35,7 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "796969362138-s3udphug7l6phalapclsgkmhra3vpufa.apps.googleusercontent.com",
+              "client_id": "796969362138-hjhp5lg45t5lo2dtcsmf7u9t2rttr289.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

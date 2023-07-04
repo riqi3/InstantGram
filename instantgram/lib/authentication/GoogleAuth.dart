@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:instantgram/Screens/homeScreen.dart';
 
@@ -31,7 +32,7 @@ Future<void> signup(BuildContext context) async {
     UserCredential result = await auth.signInWithCredential(authCredential);
     User? user = result.user;
 
-    if (result != null) {
+    if (user != null) {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
@@ -68,17 +69,18 @@ Future<void> signup(BuildContext context) async {
                     Container(
                       height: 30.0,
                       width: 30.0,
-                      decoration: BoxDecoration(
-                        // image: DecorationImage(
-                        //     image: AssetImage('assets/images/googleimage.png'),
-                        //     fit: BoxFit.cover),
-                        shape: BoxShape.circle,
-                      ),
+                      child: FaIcon(FontAwesomeIcons.google, color: Colors.red,),
+                      // decoration: BoxDecoration(
+                      //   // image: DecorationImage(
+                      //   //     image: AssetImage('assets/images/googleimage.png'),
+                      //   //     fit: BoxFit.cover),
+                      //   shape: BoxShape.circle,
+                      // ),
                     ),
                     SizedBox(
                       width: 20,
                     ),
-                    Text("Sign In with Google")
+                    Text("Signss In with Google")
                   ],
                 ),
                 onPressed: () {
