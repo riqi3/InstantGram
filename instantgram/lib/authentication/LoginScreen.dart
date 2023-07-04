@@ -11,8 +11,8 @@ class LoginScreen extends StatelessWidget {
       body: Column(
         children: [
           Container(
-            width: 200,
-            height: 200,
+            width: 500,
+            height: 500,
             child: GoogleAuth(),
             ),
         ],
