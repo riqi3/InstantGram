@@ -1,9 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:github_sign_in/github_sign_in.dart';
-import 'package:instantgram/constants/githubapi/GitHubAPI.dart';
 import 'package:instantgram/screens/Screens.dart';
+import 'package:instantgram/state/auth/backend/authenticator.dart';
 
 class GitHubAuth extends StatefulWidget {
   const GitHubAuth({super.key});
@@ -13,30 +12,12 @@ class GitHubAuth extends StatefulWidget {
 }
 
 class _GitHubAuthState extends State<GitHubAuth> {
-  // Future<UserCredential> signInWithGitHub(BuildContext context) async {
-  //   // Create a GitHubSignIn instance
-  //   final GitHubSignIn gitHubSignIn = GitHubSignIn(
-  //       clientId: GitHubAPI.clientID,
-  //       clientSecret: GitHubAPI.clientSecret,
-  //       redirectUrl: GitHubAPI.redirectUrl);
+  // Future<UserCredential> signInWithGitHub() async {
+  //   // Create a new provider
+  //   GithubAuthProvider githubProvider = GithubAuthProvider();
 
-  //   // Trigger the sign-in flow
-  //   final result = await gitHubSignIn.signIn(context);
-
-  //   // Create a credential from the access token
-  //   final githubAuthCredential = GithubAuthProvider.credential(result.token!);
-
-  //   // Once signed in, return the UserCredential
-  //   return await FirebaseAuth.instance
-  //       .signInWithCredential(githubAuthCredential);
+  //   return await FirebaseAuth.instance.signInWithProvider(githubProvider);
   // }
-
-Future<UserCredential> signInWithGitHub() async {
-  // Create a new provider
-  GithubAuthProvider githubProvider = GithubAuthProvider();
-
-  return await FirebaseAuth.instance.signInWithProvider(githubProvider);
-}
 
   @override
   Widget build(BuildContext context) {
@@ -80,15 +61,7 @@ Future<UserCredential> signInWithGitHub() async {
                   ],
                 ),
                 onPressed: () async {
-                  final user = await signInWithGitHub();
-                  if (user != null) {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => HomeScreen(),
-                      ),
-                    );
-                  }
+                  final result = await Authenticator().signInWithGitHub();
                 },
               ),
             ],

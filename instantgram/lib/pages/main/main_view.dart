@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:instantgram/state/auth/providers/auth_state_provider.dart';
 
 import '../tabs/home_view.dart';
 import '../tabs/search_view.dart';
@@ -40,13 +41,18 @@ class _MainViewState extends ConsumerState<MainView> {
                 Icons.add_photo_alternate_outlined,
               ),
             ),
-            IconButton(
-              onPressed: () async {
-// for logout
+            Consumer(
+              builder: (context, ref, child) {
+                return IconButton(
+                  onPressed: () async {
+                    // for logout
+                    ref.watch(authStateProvider.notifier).logOut();
+                  },
+                  icon: const Icon(
+                    Icons.logout,
+                  ),
+                );
               },
-              icon: const Icon(
-                Icons.logout,
-              ),
             ),
           ],
           bottom: const TabBar(
