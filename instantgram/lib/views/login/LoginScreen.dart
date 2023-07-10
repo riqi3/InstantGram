@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:instantgram/authentication/GitHubAuth.dart';
+import 'package:instantgram/views/login/GitHubAuth.dart';
 
 import 'GoogleAuth.dart';
 
