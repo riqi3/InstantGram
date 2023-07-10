@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-
-import '../tabs/home_view.dart';
-import '../tabs/search_view.dart';
-import '../tabs/user_posts_view.dart';
+import 'package:instantgram/views/tabs/home_view.dart';
+import 'package:instantgram/views/tabs/search_view.dart';
+import 'package:instantgram/views/tabs/user_posts_view.dart';
 
 class MainView extends ConsumerStatefulWidget {
   const MainView({Key? key}) : super(key: key);

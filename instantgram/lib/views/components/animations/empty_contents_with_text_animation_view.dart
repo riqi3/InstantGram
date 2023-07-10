@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:instantgram/pages/components/animations/empty_contents_animation_view.dart';
+import 'package:instantgram/views/components/animations/empty_contents_animation_view.dart';
 
 class EmptyContentsWithTextAnimationView extends StatelessWidget {
   final String text;
