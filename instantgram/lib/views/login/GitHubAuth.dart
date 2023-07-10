@@ -1,8 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:github_sign_in/github_sign_in.dart';
-import 'package:instantgram/constants/githubapi/GitHubAPI.dart';
 import 'package:instantgram/screens/Screens.dart';
 
 class GitHubAuth extends StatefulWidget {
@@ -31,12 +29,12 @@ class _GitHubAuthState extends State<GitHubAuth> {
   //       .signInWithCredential(githubAuthCredential);
   // }
 
-Future<UserCredential> signInWithGitHub() async {
-  // Create a new provider
-  GithubAuthProvider githubProvider = GithubAuthProvider();
+  Future<UserCredential> signInWithGitHub() async {
+    // Create a new provider
+    GithubAuthProvider githubProvider = GithubAuthProvider();
 
-  return await FirebaseAuth.instance.signInWithProvider(githubProvider);
-}
+    return await FirebaseAuth.instance.signInWithProvider(githubProvider);
+  }
 
   @override
   Widget build(BuildContext context) {

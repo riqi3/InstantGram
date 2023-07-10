@@ -1,15 +1,14 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:instantgram/authentication/GoogleAuth.dart';
+import 'package:instantgram/views/login/GoogleAuth.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
-Future<void> _signout() async{
-  await FirebaseAuth.instance.signOut();
-  await auth.signOut();
-}
-
+  Future<void> _signout() async {
+    await FirebaseAuth.instance.signOut();
+    await auth.signOut();
+  }
 
   @override
   Widget build(BuildContext context) {
