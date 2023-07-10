@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:instantgram/state/auth/providers/auth_state_provider.dart';
 import 'package:instantgram/views/tabs/home_view.dart';
 import 'package:instantgram/views/tabs/search_view.dart';
 import 'package:instantgram/views/tabs/user_posts_view.dart';
@@ -42,6 +43,7 @@ class _MainViewState extends ConsumerState<MainView> {
             IconButton(
               onPressed: () async {
 // for logout
+await ref.read(authStateProvider.notifier).logOut();
               },
               icon: const Icon(
                 Icons.logout,

@@ -69,7 +69,7 @@ flutter:
 
   assets:
     - assets/animations/empty.json 
-    - assets/animations/loadin.json
+    - assets/animations/loading.json
     - assets/animations/data_not_found.json
     - assets/animations/error.json
     - assets/animations/small_error.json
