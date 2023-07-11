@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:instantgram/state/auth/constants/constants.dart';
 import 'package:instantgram/state/auth/models/auth_result.dart';
-import 'package:instantgram/state/posts/typedef/user_id.dart';
+import 'package:instantgram/state/posts/typedefs/user_id.dart';
 
 class Authenticator {
   const Authenticator();
