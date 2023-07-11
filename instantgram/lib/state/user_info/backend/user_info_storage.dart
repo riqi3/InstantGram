@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart' show immutable;
 import 'package:instantgram/state/constants/firebase_collection_name.dart';
 import 'package:instantgram/state/constants/firebase_field_name.dart';
-import 'package:instantgram/state/posts/typedef/user_id.dart';
+import 'package:instantgram/state/posts/typedefs/user_id.dart';
 import 'package:instantgram/state/user_info/models/user_info_payload.dart';
 
 @immutable
