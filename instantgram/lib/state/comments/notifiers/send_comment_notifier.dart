@@ -1,10 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:instantgram/state/comments/models/comment_payload.dart';
-import 'package:instantgram/state/constants/firebase_collection_name.dart';
-import 'package:instantgram/state/image_upload/typedefs/is_loading.dart';
-import 'package:instantgram/state/posts/typedefs/posts_id.dart';
-import 'package:instantgram/state/posts/typedefs/user_id.dart';
+import '../../constants/collection_firebase.dart';
+import '../../img_upload/typedefs/is_loading.dart';
+import '../../post/typedefs/post_id.dart';
+import '../../post/typedefs/user_id.dart';
+import '../models/comment_payload.dart';
 
 class SendCommentNotifier extends StateNotifier<IsLoading> {
   SendCommentNotifier() : super(false);

@@ -22,8 +22,7 @@ class Strings {
   static const delete = 'Delete';
   static const areYouSureYouWantToDeleteThis =
       'Are you sure you want to delete this';
-
-  // log out
+      
   static const logOut = 'Log out';
   static const areYouSureThatYouWantToLogOutOfTheApp =
       'Are you sure that you want to log out of the app?';

@@ -3,10 +3,11 @@ import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:instantgram/state/comments/extensions/comment_sorting_by_request.dart';
-import 'package:instantgram/state/comments/models/comment.dart';
-import 'package:instantgram/state/comments/models/post_comments_request.dart';
-import 'package:instantgram/state/constants/firebase_collection_name.dart';
-import 'package:instantgram/state/constants/firebase_field_name.dart';
+
+import '../../constants/collection_firebase.dart';
+import '../../constants/user_name_field.firebase.dart';
+import '../models/comment.dart';
+import '../models/request_post_comments.dart';
 
 final postCommentsProvider = StreamProvider.family
     .autoDispose<Iterable<Comment>, RequestForPostAndComments>((

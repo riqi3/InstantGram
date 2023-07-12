@@ -1,24 +1,23 @@
-import 'package:firebase_core/firebase_core.dart';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:instantgram/firebase_options.dart';
-import 'package:instantgram/state/auth/providers/is_logged_in_provider.dart';
-import 'package:instantgram/state/providers/is_loading_provider.dart';
-import 'package:instantgram/views/login/login_view.dart';
-import 'package:instantgram/views/main/main_view.dart';
+import 'package:instantgram/state/auth/provider/login_provider.dart';
+import 'package:instantgram/state/provider/isloading_provider.dart';
+import 'package:instantgram/views/homepage/homeview.dart';
+import 'package:instantgram/views/login/loginview.dart';
+import 'firebase_options.dart';
 import 'dart:developer' as devtools show log;
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 extension Log on Object {
   void log() => devtools.log(toString());
 }
 
-Future<void> main() async {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-  // initializing the firebase app
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+      // options: DefaultFirebaseOptions.currentPlatform,
+      );
 
   EasyLoading.instance
     ..displayDuration = const Duration(milliseconds: 2000)
@@ -27,48 +26,56 @@ Future<void> main() async {
     ..maskType = EasyLoadingMaskType.black
     ..userInteractions = false;
 
-  runApp(ProviderScope(child: MyApp()));
+  runApp(
+    const ProviderScope(
+      child: App(),
+    ),
+  );
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class App extends StatelessWidget {
+  const App({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    // calculate widget to show
     return MaterialApp(
       darkTheme: ThemeData(
         brightness: Brightness.dark,
         primarySwatch: Colors.blueGrey,
         indicatorColor: Colors.blueGrey,
       ),
-      // theme: ThemeData(
-      //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      //   useMaterial3: true,
-      // ),
       theme: ThemeData(
         brightness: Brightness.light,
         primarySwatch: Colors.blue,
       ),
       themeMode: ThemeMode.dark,
-      builder: EasyLoading.init(),
-      title: 'InstantGram',
       debugShowCheckedModeBanner: false,
-      // home: const LoginScreen(),
-      home: Consumer(builder: (context, ref, child) {
-        ref.listen<bool?>(isLoadingProvider, (_, isLoading) {
-          if (isLoading == true) {
-            EasyLoading.show(status: 'loading...');
+      builder: EasyLoading.init(),
+      home: Consumer(
+        builder: (context, ref, child) {
+          ref.listen<bool?>(
+            isLoadingProvider,
+            (_, isLoading) {
+              if (isLoading == true) {
+                EasyLoading.show(status: 'loading...');
+              } else {
+                EasyLoading.dismiss();
+              }
+            },
+          );
+
+          final isLoggedIn = ref.watch(isLoggedInProvider);
+
+          if (isLoggedIn) {
+            return const MainView();
           } else {
-            EasyLoading.dismiss();
+            return const LoginView();
           }
-        });
-        final isLoggedIn = ref.watch(isLoggedInProvider);
-        if (isLoggedIn) {
-          return const MainView();
-        } else {
-          return const LoginView();
-        }
-      }),
+        },
+      ),
     );
   }
 }
