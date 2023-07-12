@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:instantgram/views/components/animations/data_not_found_animation_view.dart';
-import 'package:instantgram/views/components/animations/error_animation_view.dart';
-import 'package:instantgram/views/components/post/post_sliver_grid_view.dart';
-
-import '../../state/posts/providers/post_by_search_term_provider.dart';
-import '../constants/strings.dart';
-import 'animations/empty_contents_with_text_animation_view.dart';
+import 'package:instantgram/state/post/provider/post_by_search_term_provider.dart';
+import 'package:instantgram/views/components/lotties/data_not_found_animation_view.dart';
+import 'package:instantgram/views/components/lotties/empty_contents_with_text_lottie_view.dart';
+import 'package:instantgram/views/components/lotties/error_lottie_view.dart';
+import 'package:instantgram/views/components/post/posts_sliver_grid_view.dart';
+import 'package:instantgram/views/constants/strings.dart';
 
 class SearchGridView extends ConsumerWidget {
   final String searchTerm;
@@ -20,7 +19,7 @@ class SearchGridView extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     if (searchTerm.isEmpty) {
       return const SliverToBoxAdapter(
-        child: EmptyContentsWithTextAnimationView(
+        child: EmptyContentsWithTextLottieView(
           text: Strings.enterYourSearchTerm,
         ),
       );
@@ -39,14 +38,14 @@ class SearchGridView extends ConsumerWidget {
             child: DataNotFoundAnimationView(),
           );
         } else {
-          return PostsSliverGridView(
+          return PostSliverGridView(
             posts: posts,
           );
         }
       },
       error: (error, stackTrace) {
         return const SliverToBoxAdapter(
-          child: ErrorAnimationView(),
+          child: ErrorLottieView(),
         );
       },
       loading: () {

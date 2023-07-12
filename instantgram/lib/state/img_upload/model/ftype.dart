@@ -1,0 +1,4 @@
+enum FType{
+  image,
+  video
+}

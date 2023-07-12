@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:instantgram/state/likes/providers/post_like_count_provider.dart';
-import 'package:instantgram/state/posts/typedefs/posts_id.dart';
-import 'package:instantgram/views/components/animations/small_error_animation_view.dart';
+import 'package:instantgram/state/likes/providers/post_likes_count_provider.dart';
+import 'package:instantgram/state/post/typedefs/post_id.dart';
 import 'package:instantgram/views/components/constants/strings.dart';
+import 'package:instantgram/views/components/lotties/error_lottie_view.dart';
 
 class LikesCountView extends ConsumerWidget {
   final PostId postId;
@@ -23,7 +23,7 @@ class LikesCountView extends ConsumerWidget {
         return Text(likesText);
       },
       error: (error, stackTrace) {
-        return const SmallErrorAnimationView();
+        return const ErrorLottieView();
       },
       loading: () {
         return const Center(
