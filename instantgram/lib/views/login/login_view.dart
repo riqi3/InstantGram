@@ -48,8 +48,9 @@ class LoginView extends ConsumerWidget {
                   backgroundColor: AppColors.loginButtonColor,
                   foregroundColor: AppColors.loginButtonTextColor,
                 ),
-                onPressed:
-                    ref.read(authStateProvider.notifier).signInWithGitHub,
+                onPressed: () async {
+                  ref.read(authStateProvider.notifier).signInWithGitHub();
+                },
                 child: const GitHubButton(),
               ),
               TextButton(
@@ -57,7 +58,9 @@ class LoginView extends ConsumerWidget {
                   backgroundColor: AppColors.loginButtonColor,
                   foregroundColor: AppColors.loginButtonTextColor,
                 ),
-                onPressed: ref.read(authStateProvider.notifier).loginWithGoogle,
+                onPressed: () async {
+                  ref.read(authStateProvider.notifier).loginWithGoogle();
+                },
                 child: const GoogleButton(),
               ),
               const DividerWithMargins(),
