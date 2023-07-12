@@ -25,14 +25,14 @@ class PostsGridView extends StatelessWidget {
         return PostThumbnailView(
           post: post,
           onTapped: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => PostDetailsView(
-                  post: post,
-                ),
-              ),
-            );
+            // Navigator.push(
+            //   context,
+            //   MaterialPageRoute(
+            //     builder: (context) => PostDetailsView(
+            //       post: post,
+            //     ),
+            //   ),
+            // );
           },
         );
       },
