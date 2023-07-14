@@ -7,7 +7,6 @@ import 'package:instantgram/state/providers/is_loading_provider.dart';
 import 'package:instantgram/views/components/loading/loading_screen.dart';
 import 'package:instantgram/views/login/login_view.dart';
 import 'package:instantgram/views/main/main_view.dart';
-import 'views/login/LoginScreen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

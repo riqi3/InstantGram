@@ -21,7 +21,7 @@ class _MainViewState extends ConsumerState<MainView> {
       child: Scaffold(
         appBar: AppBar(
           title: const Text(
-            'Justinwapo',
+            'Instantgram!',
           ),
           actions: [
             IconButton(
@@ -43,7 +43,7 @@ class _MainViewState extends ConsumerState<MainView> {
             IconButton(
               onPressed: () async {
 // for logout
-await ref.read(authStateProvider.notifier).logOut();
+                await ref.read(authStateProvider.notifier).logOut();
               },
               icon: const Icon(
                 Icons.logout,

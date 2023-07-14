@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instantgram/state/posts/models/post.dart';
+import 'package:instantgram/views/components/post/post_detail_view.dart';
 import 'package:instantgram/views/components/post/post_thumbnail_view.dart';
 
 class PostsGridView extends StatelessWidget {
