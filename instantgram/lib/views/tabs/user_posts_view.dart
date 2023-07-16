@@ -4,8 +4,10 @@ import 'package:instantgram/state/posts/providers/user_posts_provider.dart';
 import 'package:instantgram/views/components/animations/empty_contents_with_text_animation_view.dart';
 import 'package:instantgram/views/components/animations/error_animation_view.dart';
 import 'package:instantgram/views/components/animations/loading_animation_view.dart';
-import 'package:instantgram/views/components/post/post_grid_view.dart';
+
 import 'package:instantgram/views/constants/strings.dart';
+
+import '../components/post/post_grid_view.dart';
 
 class UserPostsView extends ConsumerWidget {
   const UserPostsView({Key? key}) : super(key: key);

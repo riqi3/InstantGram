@@ -7,10 +7,12 @@ import 'package:instantgram/state/auth/providers/user_id_provider.dart';
 import 'package:instantgram/state/image_upload/models/file_type.dart';
 import 'package:instantgram/state/image_upload/models/thumbnail_request.dart';
 import 'package:instantgram/state/image_upload/providers/image_uploader_provider.dart';
-import 'package:instantgram/state/post_settings/models/post_settings.dart';
-import 'package:instantgram/state/post_settings/post_settings_provider.dart';
+
 import 'package:instantgram/views/components/file_thumbnail_view.dart';
 import 'package:instantgram/views/constants/strings.dart';
+
+import '../state/post_settings/models/post_settings.dart';
+import '../state/post_settings/post_settings_provider.dart';
 
 class CreateNewPostView extends StatefulHookConsumerWidget {
   final File fileToPost;

@@ -2,9 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:instantgram/state/auth/providers/auth_state_provider.dart';
-import 'package:instantgram/views/tabs/home_view.dart';
-import 'package:instantgram/views/tabs/search_view.dart';
-import 'package:instantgram/views/tabs/user_posts_view.dart';
+
+import 'package:instantgram/state/image_upload/models/file_type.dart';
+
+import 'package:instantgram/views/components/dialogs/alert_dialog_model.dart';
+import 'package:instantgram/views/components/dialogs/logout_dialog.dart';
+import 'package:instantgram/views/constants/strings.dart';
+
+import '../../state/image_upload/helper/image_picker_helper.dart';
+import '../../state/post_settings/post_settings_provider.dart';
+import '../create_new_post_view.dart';
+import '../tabs/home_view.dart';
+import '../tabs/search_view.dart';
+import '../tabs/user_posts_view.dart';
 
 class MainView extends ConsumerStatefulWidget {
   const MainView({Key? key}) : super(key: key);
@@ -21,7 +31,7 @@ class _MainViewState extends ConsumerState<MainView> {
       child: Scaffold(
         appBar: AppBar(
           title: const Text(
-            'Instantgram!',
+            Strings.appName,
           ),
           actions: [
             IconButton(
@@ -29,12 +39,56 @@ class _MainViewState extends ConsumerState<MainView> {
                 FontAwesomeIcons.film,
               ),
               onPressed: () async {
-                //for image
+                // pick a video first
+                final videoFile =
+                    await ImagePickerHelper.pickVideoFromGallery();
+                if (videoFile == null) {
+                  return;
+                }
+
+                // reset the postSettingProvider
+                ref.refresh(postSettingProvider);
+
+                // go to the screen to create a new post
+                if (!mounted) {
+                  return;
+                }
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => CreateNewPostView(
+                      fileType: FileType.video,
+                      fileToPost: videoFile,
+                    ),
+                  ),
+                );
               },
             ),
             IconButton(
               onPressed: () async {
-                // for image
+                // pick an image first
+                final imageFile =
+                    await ImagePickerHelper.pickImageFromGallery();
+                if (imageFile == null) {
+                  return;
+                }
+
+                // reset the postSettingProvider
+                ref.refresh(postSettingProvider);
+
+                // go to the screen to create a new post
+                if (!mounted) {
+                  return;
+                }
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => CreateNewPostView(
+                      fileType: FileType.image,
+                      fileToPost: imageFile,
+                    ),
+                  ),
+                );
               },
               icon: const Icon(
                 Icons.add_photo_alternate_outlined,
@@ -42,8 +96,13 @@ class _MainViewState extends ConsumerState<MainView> {
             ),
             IconButton(
               onPressed: () async {
-// for logout
-                await ref.read(authStateProvider.notifier).logOut();
+                final shouldLogOut =
+                    await const LogoutDialog().present(context).then(
+                          (value) => value ?? false,
+                        );
+                if (shouldLogOut) {
+                  await ref.read(authStateProvider.notifier).logOut();
+                }
               },
               icon: const Icon(
                 Icons.logout,
