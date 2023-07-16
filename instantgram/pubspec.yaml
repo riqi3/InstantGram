@@ -51,6 +51,8 @@ dependencies:
   video_thumbnail: ^0.5.3
   uuid: ^3.0.7
   intl: ^0.18.1
+  flutter_easyloading: ^3.0.5
+  share_plus: ^7.0.2
 
 dev_dependencies:
   flutter_test:

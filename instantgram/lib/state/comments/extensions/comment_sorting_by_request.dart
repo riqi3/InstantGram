@@ -1,6 +1,6 @@
-import 'package:instantgram/enums/date_sorting.dart';
-import 'package:instantgram/state/comments/models/comment.dart';
-import 'package:instantgram/state/comments/models/post_comments_request.dart';
+import '../../../enum/date_sorting.dart';
+import '../models/comment.dart';
+import '../models/request_post_comments.dart';
 
 extension Sorting on Iterable<Comment> {
   Iterable<Comment> applySortingFrom(RequestForPostAndComments request) {
