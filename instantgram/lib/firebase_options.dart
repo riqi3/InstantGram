@@ -31,10 +31,7 @@ class DefaultFirebaseOptions {
           'you can reconfigure this by running the FlutterFire CLI again.',
         );
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -52,11 +49,13 @@ class DefaultFirebaseOptions {
     }
   }
 
+ 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyCFsiueIHZ-9zXH8HY3sQCAorikzTvicXU',
     appId: '1:796969362138:android:1a4bd7f25e11830882fbe3',
     messagingSenderId: '796969362138',
     projectId: 'instantgram-80120',
     storageBucket: 'instantgram-80120.appspot.com',
+ 
   );
 }
