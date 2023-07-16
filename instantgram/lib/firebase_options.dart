@@ -25,10 +25,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -47,30 +44,41 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBsjMFMw8IL-UH38QtDVNXwYD94OmzYlbQ',
-    appId: '1:684641613737:web:de685d97541f8aed93b6b8',
-    messagingSenderId: '684641613737',
-    projectId: 'midtermprojectinstaclone',
-    authDomain: 'midtermprojectinstaclone.firebaseapp.com',
-    storageBucket: 'midtermprojectinstaclone.appspot.com',
-    measurementId: 'G-7ZL2B4RGWV',
+    apiKey: 'AIzaSyD1idsryG_bZIVBO4-XIPud81onDUdjWvg',
+    appId: '1:796969362138:web:78ad62746fed293182fbe3',
+    messagingSenderId: '796969362138',
+    projectId: 'instantgram-80120',
+    authDomain: 'instantgram-80120.firebaseapp.com',
+    storageBucket: 'instantgram-80120.appspot.com',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAmI9r7wUom1ZyhOi5v0D1fR0ElZZEUVxE',
-    appId: '1:684641613737:android:05cf4807b706680c93b6b8',
-    messagingSenderId: '684641613737',
-    projectId: 'midtermprojectinstaclone',
-    storageBucket: 'midtermprojectinstaclone.appspot.com',
+    apiKey: 'AIzaSyCFsiueIHZ-9zXH8HY3sQCAorikzTvicXU',
+    appId: '1:796969362138:android:1a4bd7f25e11830882fbe3',
+    messagingSenderId: '796969362138',
+    projectId: 'instantgram-80120',
+    storageBucket: 'instantgram-80120.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBWPvEhCnO2MGDYsxOojeRpz8OhN1HZv-Y',
-    appId: '1:684641613737:ios:83d28ef388b6c98793b6b8',
-    messagingSenderId: '684641613737',
-    projectId: 'midtermprojectinstaclone',
-    storageBucket: 'midtermprojectinstaclone.appspot.com',
-    iosClientId: '684641613737-5ljh1p0p9ahtdp3sqeitm42dk7he3m01.apps.googleusercontent.com',
-    iosBundleId: 'com.example.indagram',
+    apiKey: 'AIzaSyCQ9Qid8BpCo8pY9fE_oPCdmfWgvYB7TJc',
+    appId: '1:796969362138:ios:81469e01ffc4772282fbe3',
+    messagingSenderId: '796969362138',
+    projectId: 'instantgram-80120',
+    storageBucket: 'instantgram-80120.appspot.com',
+    androidClientId: '796969362138-mdmptieanbqqaak9v0b8nkeh5vf6lb82.apps.googleusercontent.com',
+    iosClientId: '796969362138-eotj65gvaaeflll2onr710jdfi5uq6j1.apps.googleusercontent.com',
+    iosBundleId: 'com.example.instantgram',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyCQ9Qid8BpCo8pY9fE_oPCdmfWgvYB7TJc',
+    appId: '1:796969362138:ios:0c1a476b8740f1db82fbe3',
+    messagingSenderId: '796969362138',
+    projectId: 'instantgram-80120',
+    storageBucket: 'instantgram-80120.appspot.com',
+    androidClientId: '796969362138-mdmptieanbqqaak9v0b8nkeh5vf6lb82.apps.googleusercontent.com',
+    iosClientId: '796969362138-h9924qn14e96ljv185le453jcgjv82fq.apps.googleusercontent.com',
+    iosBundleId: 'com.example.instantgram.RunnerTests',
   );
 }

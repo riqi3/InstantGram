@@ -23,7 +23,11 @@ class EmptyContentsWithTextLottieView extends StatelessWidget {
                   ?.copyWith(color: Colors.white54),
             ),
           ),
+<<<<<<< HEAD:instantgram/lib/views/components/lotties/empty_contents_with_text_lottie_view.dart
           const EmptyLottieView(),
+=======
+          // const EmptyContentsAnimationView(),
+>>>>>>> talandron-additions-1:instantgram/lib/views/components/animations/empty_contents_with_text_animation_view.dart
         ],
       ),
     );

@@ -14,11 +14,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "796969362138-kpjt7qs9p69nas2itl43emkn0gjrja0n.apps.googleusercontent.com",
+          "client_id": "796969362138-mdmptieanbqqaak9v0b8nkeh5vf6lb82.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.instantgram",
-            "certificate_hash": "2f37eaecfd292e1e5c68171a0886d70fa9fd042c"
+            "certificate_hash": "0826427aed42057ee06b35964e02b358e8e83b5b"
           }
         },
         {
