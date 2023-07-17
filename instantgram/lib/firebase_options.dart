@@ -26,10 +26,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for macos - '
@@ -58,5 +55,16 @@ class DefaultFirebaseOptions {
     messagingSenderId: '796969362138',
     projectId: 'instantgram-80120',
     storageBucket: 'instantgram-80120.appspot.com',
+  );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyCQ9Qid8BpCo8pY9fE_oPCdmfWgvYB7TJc',
+    appId: '1:796969362138:ios:81469e01ffc4772282fbe3',
+    messagingSenderId: '796969362138',
+    projectId: 'instantgram-80120',
+    storageBucket: 'instantgram-80120.appspot.com',
+    androidClientId: '796969362138-mdmptieanbqqaak9v0b8nkeh5vf6lb82.apps.googleusercontent.com',
+    iosClientId: '796969362138-eotj65gvaaeflll2onr710jdfi5uq6j1.apps.googleusercontent.com',
+    iosBundleId: 'com.example.instantgram',
   );
 }
