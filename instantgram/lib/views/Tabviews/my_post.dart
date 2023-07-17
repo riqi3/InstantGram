@@ -2,12 +2,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:instantgram/state/post/provider/user_post_provider.dart';
-import 'package:instantgram/views/components/lotties/empty_lottie_view.dart';
-import 'package:instantgram/views/components/lotties/loading_lottie.dart';
-import 'package:instantgram/views/components/post/posts_layouts.dart';
+ 
 
+import '../../state/post/provider/user_post_provider.dart';
+import '../components/lotties/empty_lottie_view.dart';
 import '../components/lotties/error_lottie_view.dart';
+import '../components/lotties/loading_lottie.dart';
+import '../components/post/posts_layouts.dart';
 
 class MyPostsView extends ConsumerWidget {
   const MyPostsView({Key? key}) : super(key: key);

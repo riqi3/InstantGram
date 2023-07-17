@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:instantgram/views/components/search_grid_view.dart';
-import 'package:instantgram/views/constants/strings.dart';
 import 'package:instantgram/views/extensions/dissmiss_keyboard.dart';
+
+import '../components/search_grid_view.dart';
+import '../constants/strings.dart';
 
 class SearchView extends HookConsumerWidget {
   const SearchView({super.key});
