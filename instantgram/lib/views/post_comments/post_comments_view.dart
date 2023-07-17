@@ -3,16 +3,16 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:instantgram/state/post/models/post.dart';
-import 'package:instantgram/state/post/provider/specific_post_with_comments_provider.dart';
-import 'package:instantgram/views/components/lotties/empty_contents_with_text_lottie_view.dart';
-import 'package:instantgram/views/components/lotties/error_lottie_view.dart';
 import 'package:instantgram/views/extensions/dissmiss_keyboard.dart';
+
 import '../../state/auth/provider/user_id_provider.dart';
 import '../../state/comments/models/request_post_comments.dart';
 import '../../state/comments/providers/post_comments_provider.dart';
 import '../../state/comments/providers/send_comments_provider.dart';
+import '../../state/post/models/post.dart';
 import '../comments/comment_tile.dart';
+import '../components/lotties/empty_contents_with_text_lottie_view.dart';
+import '../components/lotties/error_lottie_view.dart';
 import '../components/lotties/loading_lottie.dart';
 
 class PostCommentsView extends HookConsumerWidget {
@@ -52,7 +52,6 @@ class PostCommentsView extends HookConsumerWidget {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
-            ref.refresh(specificPostWithCommentsProvider(req));
             Navigator.pop(context);
           },
         ),

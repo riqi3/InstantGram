@@ -5,10 +5,10 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:instantgram/state/comments/extensions/comment_sorting_by_request.dart';
 
 import '../comments/models/comment.dart';
-import '../comments/models/post_comments_request.dart';
-import '../constants/firebase_collection_name.dart';
-import '../constants/firebase_field_name.dart';
-import '../posts/models/post.dart';
+import '../comments/models/request_post_comments.dart';
+import '../constants/collection_firebase.dart';
+import '../constants/user_name_field.firebase.dart';
+import '../post/models/post.dart';
 import '../posts/models/post_with_comments.dart';
 
 final specificPostWithCommentsProvider = StreamProvider.family

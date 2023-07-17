@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:instantgram/state/auth/providers/is_logged_in_provider.dart';
-
+import 'package:instantgram/state/auth/provider/login_provider.dart';
+import 'package:instantgram/state/provider/isloading_provider.dart';
+import 'package:instantgram/views/homepage/homeview.dart';
+import 'package:instantgram/views/login/loginview.dart';
+import 'package:firebase_app_check/firebase_app_check.dart';
 import 'firebase_options.dart';
-import 'state/providers/is_loading_provider.dart';
-import 'views/components/loading/loading_screen.dart';
-import 'views/login/login_view.dart';
-import 'views/main/main_view.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform,
-      );
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  await FirebaseAppCheck.instance.activate(
+    webRecaptchaSiteKey: 'recaptcha-v3-site-key',
+    androidProvider: AndroidProvider.debug,
+  );
   runApp(
     const ProviderScope(
       child: App(),
@@ -49,11 +51,13 @@ class App extends ConsumerWidget {
             isLoadingProvider,
             (_, isLoading) {
               if (isLoading) {
-                LoadingScreen.instance().show(
-                  context: context,
-                );
+                // LoadingScreen.instance().show(
+                //   context: context,
+                // );
+                print('loading...');
               } else {
-                LoadingScreen.instance().hide();
+                // LoadingScreen.instance().hide();
+                print('hide loading...');
               }
             },
           );

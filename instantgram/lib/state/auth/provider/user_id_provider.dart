@@ -1,6 +1,7 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:instantgram/state/auth/provider/auth_state_provider.dart';
-import 'package:instantgram/state/post/typedefs/user_id.dart';
+
+import '../../post/typedefs/user_id.dart';
+import 'auth_state_provider.dart';
 
 final userIdProvider = Provider<UserId?>(
   (ref) => ref.watch(authStateProvider).userId,

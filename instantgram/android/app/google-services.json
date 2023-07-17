@@ -37,6 +37,13 @@
             {
               "client_id": "796969362138-hjhp5lg45t5lo2dtcsmf7u9t2rttr289.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "796969362138-eotj65gvaaeflll2onr710jdfi5uq6j1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.instantgram"
+              }
             }
           ]
         }

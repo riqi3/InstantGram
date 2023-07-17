@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:instantgram/state/img_upload/exepctions/thumbnail_exceptions.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:instantgram/state/img_upload/extenssion/get_aspect_ratio.dart';
-import 'package:instantgram/state/img_upload/model/ftype.dart';
-import 'package:instantgram/state/img_upload/model/image_adjust_mod.dart';
-import 'package:instantgram/state/img_upload/model/thumbnail_req.dart';
-import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import 'package:video_thumbnail/video_thumbnail.dart';
+
+import '../exceptions/thumbnail_exceptions.dart';
+import '../model/ftype.dart';
+import '../model/image_adjust_mod.dart';
+import '../model/thumbnail_req.dart';
 
 final thumbnailProvider =
     FutureProvider.family.autoDispose<ImageMod, ThumbnailRequest>((

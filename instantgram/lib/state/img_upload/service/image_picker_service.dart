@@ -1,6 +1,6 @@
 import 'dart:io' show File;
 
-import 'package:flutter/foundation.dart' show immutable;
+import 'package:flutter/cupertino.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:instantgram/state/img_upload/extenssion/to_file.dart';
 

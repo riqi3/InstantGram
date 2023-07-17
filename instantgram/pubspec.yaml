@@ -53,6 +53,7 @@ dependencies:
   intl: ^0.18.1
   flutter_easyloading: ^3.0.5
   share_plus: ^7.0.2
+  firebase_app_check: ^0.1.5+1
 
 dev_dependencies:
   flutter_test:
@@ -77,11 +78,11 @@ flutter:
   uses-material-design: true
 
   assets:
-  - assets/animations/empty.json 
-  - assets/animations/loading.json
-  - assets/animations/data_not_found.json
-  - assets/animations/error.json
-  - assets/animations/small_error.json
+    - assets/lotties/empty.json
+    - assets/lotties/loading.json
+    # - assets/lotties/uploading.json
+    - assets/lotties/data_not_found.json
+    - assets/lotties/error.json
 
   # To add assets to your application, add an assets section, like this:
   # assets:

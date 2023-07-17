@@ -2,10 +2,11 @@ import 'dart:collection' show MapView;
 
 import 'package:cloud_firestore/cloud_firestore.dart' show FieldValue;
 import 'package:flutter/foundation.dart' show immutable;
-import 'package:instantgram/state/img_upload/model/ftype.dart';
 import 'package:instantgram/state/post/models/post_keys.dart';
-import 'package:instantgram/state/post/typedefs/user_id.dart';
-import 'package:instantgram/state/post_prefference/models/post_prefference.dart';
+
+import '../../img_upload/model/ftype.dart';
+import '../../post_prefference/models/post_prefference.dart';
+import '../typedefs/user_id.dart';
 
 @immutable
 class PostPayload extends MapView<String, dynamic> {

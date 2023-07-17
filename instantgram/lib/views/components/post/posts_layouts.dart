@@ -1,13 +1,7 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD:instantgram/lib/views/components/post/posts_layouts.dart
-import 'package:instantgram/state/post/models/post.dart';
 import 'package:instantgram/views/components/post/post_thumbnail.dart';
-=======
-import 'package:instantgram/state/posts/models/post.dart';
-import 'package:instantgram/views/components/post/post_detail_view.dart';
-import 'package:instantgram/views/components/post/post_thumbnail_view.dart';
->>>>>>> talandron-additions-1:instantgram/lib/views/components/post/post_grid_view.dart
 
+import '../../../state/post/models/post.dart';
 import '../../post_details/post_detail_view.dart';
 
 class PostsLayout extends StatelessWidget {

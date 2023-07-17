@@ -3,26 +3,14 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-<<<<<<< HEAD:instantgram/lib/views/createpost/create_post_view.dart
-import 'package:instantgram/state/auth/provider/user_id_provider.dart';
-import 'package:instantgram/state/img_upload/model/ftype.dart';
-import 'package:instantgram/state/img_upload/model/thumbnail_req.dart';
-import 'package:instantgram/state/img_upload/provider/uploader.dart';
-import 'package:instantgram/state/post_prefference/models/post_prefference.dart';
-import 'package:instantgram/state/post_prefference/provider/post_pref_provider.dart';
-import 'package:instantgram/views/components/post_thumbnail_view.dart';
-=======
-import 'package:instantgram/state/auth/providers/user_id_provider.dart';
-import 'package:instantgram/state/image_upload/models/file_type.dart';
-import 'package:instantgram/state/image_upload/models/thumbnail_request.dart';
-import 'package:instantgram/state/image_upload/providers/image_uploader_provider.dart';
 
-import 'package:instantgram/views/components/file_thumbnail_view.dart';
-import 'package:instantgram/views/constants/strings.dart';
->>>>>>> talandron-additions-1:instantgram/lib/views/create_new_post_view.dart
-
-import '../state/post_settings/models/post_settings.dart';
-import '../state/post_settings/post_settings_provider.dart';
+import '../../state/auth/provider/user_id_provider.dart';
+import '../../state/img_upload/model/ftype.dart';
+import '../../state/img_upload/model/thumbnail_req.dart';
+import '../../state/img_upload/provider/uploader.dart';
+import '../../state/post_prefference/models/post_prefference.dart';
+import '../../state/post_prefference/provider/post_pref_provider.dart';
+import '../components/post_thumbnail_view.dart';
 
 class CreateNewPostView extends StatefulHookConsumerWidget {
   final File fileToPost;

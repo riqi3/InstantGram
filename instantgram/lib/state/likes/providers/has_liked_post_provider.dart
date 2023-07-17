@@ -2,10 +2,11 @@ import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:instantgram/state/auth/provider/user_id_provider.dart';
-import 'package:instantgram/state/constants/collection_firebase.dart';
-import 'package:instantgram/state/constants/user_name_field.firebase.dart';
-import 'package:instantgram/state/post/typedefs/post_id.dart';
+
+import '../../auth/provider/user_id_provider.dart';
+import '../../constants/collection_firebase.dart';
+import '../../constants/user_name_field.firebase.dart';
+import '../../post/typedefs/post_id.dart';
 
 final hasLikedPostProvider = StreamProvider.family.autoDispose<bool, PostId>(
   (

@@ -6,7 +6,7 @@ import 'package:instantgram/views/components/lotties/empty_contents_with_text_lo
 import 'package:instantgram/views/components/lotties/error_lottie_view.dart';
 import 'package:instantgram/views/components/post/posts_sliver_grid_view.dart';
 import 'package:instantgram/views/constants/strings.dart';
-
+ 
 class SearchGridView extends ConsumerWidget {
   final String searchTerm;
 

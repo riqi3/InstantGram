@@ -2,10 +2,10 @@ import 'package:flutter/foundation.dart' show immutable;
 
 @immutable
 class Constants {
-  // for photos
+  // for pics
   static const imageThumbnailWidth = 150;
 
-  // for videos
+  // for vids
   static const videoThumbnailMaxHeight = 400;
   static const videoThumbnailQuality = 75;
 
