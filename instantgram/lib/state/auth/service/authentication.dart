@@ -43,6 +43,66 @@ class Authenticator {
     }
   }
 
+  Future<AuthResult> loginWithGoogle() async {
+    final GoogleSignIn googleSignIn = GoogleSignIn(
+      scopes: [
+        Constants.emailScope,
+      ],
+    );
+    final signInAccount = await googleSignIn.signIn();
+    if (signInAccount == null) {
+      return AuthResult.aborted;
+    }
+
+    final googleAuth = await signInAccount.authentication;
+    final oauthCredentials = GoogleAuthProvider.credential(
+      idToken: googleAuth.idToken,
+      accessToken: googleAuth.accessToken,
+    );
+    try {
+      await FirebaseAuth.instance.signInWithCredential(
+        oauthCredentials,
+      );
+      return AuthResult.success;
+    } catch (e) {
+      return AuthResult.failure;
+    }
+  }
+
+  // Future<AuthResult> loginWithGoogle() async {
+  //   final GoogleSignIn googleSignIn = GoogleSignIn(
+  //     serverClientId:
+  //         // '717498044189-4kk01jpa8q3n0bo91f0fnr37eoun4qo8.apps.googleusercontent.com',
+  //         '684641613737-hns82gd66ails95fb9idk71gvjkmeu26.apps.googleusercontent.com',
+  //     //       'com.googleusercontent.apps.717498044189-4kk01jpa8q3n0bo91f0fnr37eoun4qo8',
+  //     scopes: [
+  //       Constants.emailScope,
+  //     ],
+  //   );
+  //   final signInAccount = await googleSignIn.signIn();
+  //   // EasyLoading.show(status: 'Logging in ....');
+  //   if (signInAccount == null) {
+  //     return AuthResult.aborted;
+  //   }
+
+  //   final googleAuth = await signInAccount.authentication;
+  //   final oauthCredentials = GoogleAuthProvider.credential(
+  //     idToken: googleAuth.idToken,
+  //     accessToken: googleAuth.accessToken,
+  //   );
+  //   try {
+  //     await FirebaseAuth.instance.signInWithCredential(
+  //       oauthCredentials,
+  //     );
+  //     //EasyLoading.dismiss();
+  //     return AuthResult.success;
+  //   } catch (e) {
+  //     //EasyLoading.dismiss();
+  //     return AuthResult.failure;
+  //   }
+  // }
+}
+
 // Future<UserCredential> signInWithGitHub() async {
 //   // Create a new provider
 //   GithubAuthProvider githubProvider = GithubAuthProvider(
@@ -62,37 +122,3 @@ class Authenticator {
 //   // Or use signInWithRedirect
 //   // return await FirebaseAuth.instance.signInWithRedirect(githubProvider);
 // }
-
-  Future<AuthResult> loginWithGoogle() async {
-    final GoogleSignIn googleSignIn = GoogleSignIn(
-      serverClientId:
-          // '717498044189-4kk01jpa8q3n0bo91f0fnr37eoun4qo8.apps.googleusercontent.com',
-          '684641613737-hns82gd66ails95fb9idk71gvjkmeu26.apps.googleusercontent.com',
-      //       'com.googleusercontent.apps.717498044189-4kk01jpa8q3n0bo91f0fnr37eoun4qo8',
-      scopes: [
-        Constants.emailScope,
-      ],
-    );
-    final signInAccount = await googleSignIn.signIn();
-    // EasyLoading.show(status: 'Logging in ....');
-    if (signInAccount == null) {
-      return AuthResult.aborted;
-    }
-
-    final googleAuth = await signInAccount.authentication;
-    final oauthCredentials = GoogleAuthProvider.credential(
-      idToken: googleAuth.idToken,
-      accessToken: googleAuth.accessToken,
-    );
-    try {
-      await FirebaseAuth.instance.signInWithCredential(
-        oauthCredentials,
-      );
-      //EasyLoading.dismiss();
-      return AuthResult.success;
-    } catch (e) {
-      //EasyLoading.dismiss();
-      return AuthResult.failure;
-    }
-  }
-}
