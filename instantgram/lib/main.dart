@@ -51,12 +51,14 @@ class App extends ConsumerWidget {
             isLoadingProvider,
             (_, isLoading) {
               if (isLoading) {
+                CircularProgressIndicator();
                 // LoadingScreen.instance().show(
                 //   context: context,
                 // );
                 print('loading...');
               } else {
                 // LoadingScreen.instance().hide();
+
                 print('hide loading...');
               }
             },

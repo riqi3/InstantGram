@@ -83,6 +83,7 @@ flutter:
     # - assets/lotties/uploading.json
     - assets/lotties/data_not_found.json
     - assets/lotties/error.json
+    - assets/lotties/glow_loading.json
 
   # To add assets to your application, add an assets section, like this:
   # assets:
