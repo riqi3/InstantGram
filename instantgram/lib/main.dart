@@ -5,13 +5,17 @@ import 'package:instantgram/state/auth/provider/login_provider.dart';
 import 'package:instantgram/state/provider/isloading_provider.dart';
 import 'package:instantgram/views/homepage/homeview.dart';
 import 'package:instantgram/views/login/loginview.dart';
-
+import 'package:firebase_app_check/firebase_app_check.dart';
 import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
+  );
+  await FirebaseAppCheck.instance.activate(
+    webRecaptchaSiteKey: 'recaptcha-v3-site-key',
+    androidProvider: AndroidProvider.debug,
   );
   runApp(
     const ProviderScope(
