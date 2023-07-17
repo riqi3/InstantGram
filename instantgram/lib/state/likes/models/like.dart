@@ -1,9 +1,10 @@
 import 'dart:collection' show MapView;
 
-import 'package:flutter/foundation.dart' show immutable;
-import 'package:instantgram/state/constants/user_name_field.firebase.dart';
-import 'package:instantgram/state/post/typedefs/post_id.dart';
-import 'package:instantgram/state/post/typedefs/user_id.dart';
+import 'package:flutter/cupertino.dart';
+
+import '../../constants/user_name_field.firebase.dart';
+import '../../post/typedefs/post_id.dart';
+import '../../post/typedefs/user_id.dart';
 
 @immutable
 class Like extends MapView<String, String> {
