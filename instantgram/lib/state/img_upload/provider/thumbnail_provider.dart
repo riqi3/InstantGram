@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:instantgram/state/img_upload/exepctions/thumbnail_exceptions.dart';
+import 'package:instantgram/state/img_upload/exceptions/thumbnail_exceptions.dart';
 import 'package:instantgram/state/img_upload/extenssion/get_aspect_ratio.dart';
 import 'package:instantgram/state/img_upload/model/ftype.dart';
 import 'package:instantgram/state/img_upload/model/image_adjust_mod.dart';
