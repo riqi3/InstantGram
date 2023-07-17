@@ -1,9 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:instantgram/state/constants/collection_firebase.dart';
-import 'package:instantgram/state/constants/user_name_field.firebase.dart';
-import 'package:instantgram/state/likes/models/like.dart';
-import 'package:instantgram/state/likes/models/like_dislike_request.dart';
+
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+
+import '../../constants/collection_firebase.dart';
+import '../../constants/user_name_field.firebase.dart';
+import '../models/like.dart';
+import '../models/like_dislike_request.dart';
 
 part 'like_dislike_post_request.g.dart';
 
